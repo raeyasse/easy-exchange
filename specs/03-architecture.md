@@ -5,16 +5,15 @@
 | Part | Choice | Why |
 |------|--------|-----|
 | App | React + TypeScript, built with Vite | Simple, well supported by AI agents |
-| Routing | React Router with `HashRouter` | GitHub Pages can't handle deep links; hash URLs avoid 404s on reload |
-| Data | Browser `localStorage` | GitHub Pages has no backend or database |
+| Routing | React Router with `HashRouter` | Works on any static host without extra configuration; no 404s on reload |
+| Data | Browser `localStorage` | The app is static, with no backend or database |
 | Tests | Vitest, trade logic only | Built into the Vite ecosystem; covers the riskiest logic without extra cost |
-| Hosting | GitHub Pages via GitHub Actions | Free, deploys on every push to `main` |
+| Hosting | Vercel, connected to the GitHub repo | Free, builds and deploys automatically on every push; no workflow files needed |
 
 ## Folder structure
 
 ```
 easy-exchange/
-├── .github/workflows/deploy.yml
 ├── specs/
 ├── src/
 │   ├── data/        # types, seed data, save/load, trade logic
@@ -62,16 +61,17 @@ interface Trade {
 
 ## Deployment
 
-- `vite.config.ts` sets `base: '/easy-exchange/'`.
-- The GitHub Actions workflow runs tests, builds, and deploys to Pages.
-- In the repo, go to Settings → Pages → Source and choose **GitHub Actions**.
-- Live at `https://<your-username>.github.io/easy-exchange/`.
+- Hosted on Vercel's free Hobby plan.
+- One-time setup: sign in to vercel.com with GitHub, choose **Add New → Project**, select the `easy-exchange` repo, and deploy. Vercel detects Vite automatically.
+- Every push to `main` triggers a new build and deploy. No GitHub Actions or workflow files are needed.
+- Tests are run locally with `npm test` before pushing.
+- Live at `https://easy-exchange.vercel.app` or similar; Vercel shows the exact URL.
 
 ## Build order
 
 Build one step per Cursor prompt, and commit after each:
 
-1. Scaffold + deploy an empty page to GitHub Pages
+1. Scaffold + deploy an empty page to Vercel
 2. Data layer + seed data
 3. Feature 1: Demo users
 4. Feature 2: Record listings

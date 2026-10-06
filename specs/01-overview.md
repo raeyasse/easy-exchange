@@ -28,7 +28,7 @@ The app has no real sign-in. It ships with four **demo users**, and the visitor 
 - **R5** The other user accepts or declines; accepting swaps ownership of the records.
 - **R6** See your incoming, outgoing, and past trades.
 - **R7** Data is saved in the browser and survives reloads.
-- **R8** Deploys to GitHub Pages and works on phone and desktop.
+- **R8** Deploys to Vercel automatically on every push and works on phone and desktop.
 - **R9** Trade logic has automated tests; everything else is checked manually.
 
 ## Out of scope
