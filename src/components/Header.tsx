@@ -9,6 +9,7 @@ export function Header() {
           Easy Exchange
         </Link>
         <Link to="/records/new">List a record</Link>
+        <Link to="/trades">Trades</Link>
         <UserMenu />
       </div>
     </header>

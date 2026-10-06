@@ -16,3 +16,15 @@ export {
 } from './records'
 export type { AppState, Record, Trade, User } from './types'
 export type { FieldErrors, RecordFields } from './records'
+export {
+  acceptTrade,
+  canSendProposal,
+  cancelTrade,
+  declineTrade,
+  incomingTrades,
+  outgoingTrades,
+  proposeTrade,
+  TradeError,
+  tradeHistory,
+} from './trades'
+export type { TradeProposal } from './trades'

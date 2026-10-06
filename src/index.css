@@ -278,3 +278,136 @@ textarea {
   opacity: 0.45;
   cursor: not-allowed;
 }
+
+/* Trades */
+
+.picker {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.picker legend {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.picker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid #e3e1db;
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.picker-row .cover {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+}
+
+.picker-row span {
+  color: #555;
+}
+
+.picker-row strong {
+  color: #1a1a1a;
+}
+
+.picker-row-locked {
+  cursor: not-allowed;
+  background: #f0eee9;
+}
+
+.picker-row-locked .cover,
+.picker-row-locked strong {
+  opacity: 0.5;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin: 1.25rem 0 1.5rem;
+  border-bottom: 1px solid #e3e1db;
+}
+
+.tab {
+  padding: 0.5rem 0.875rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: #555;
+  cursor: pointer;
+}
+
+.tab-active {
+  color: #1a1a1a;
+  border-bottom-color: #2f4a3d;
+  font-weight: 600;
+}
+
+.trade-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.trade {
+  background: #fff;
+  border: 1px solid #e3e1db;
+  border-radius: 6px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.trade-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trade-sides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+}
+
+.trade-sides h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0 0 0.25rem;
+}
+
+.trade-sides ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: #eceae4;
+  color: #444;
+}
+
+.status-accepted {
+  background: #e4ece7;
+  color: #2f4a3d;
+}
+
+.status-declined,
+.status-cancelled {
+  background: #f3e6e6;
+  color: #7a2424;
+}

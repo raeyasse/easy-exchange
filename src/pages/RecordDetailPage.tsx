@@ -72,7 +72,17 @@ export function RecordDetailPage() {
             </button>
           </div>
         </div>
-      ) : null}
+      ) : (
+        <div className="page-actions">
+          <button
+            type="button"
+            className="button"
+            onClick={() => navigate(`/trades/new?record=${record.id}`)}
+          >
+            Propose trade
+          </button>
+        </div>
+      )}
     </main>
   )
 }

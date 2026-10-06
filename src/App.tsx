@@ -6,7 +6,9 @@ import { HomePage } from './pages/HomePage'
 import { NewRecordPage } from './pages/NewRecordPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { ProfilePage } from './pages/ProfilePage'
+import { ProposeTradePage } from './pages/ProposeTradePage'
 import { RecordDetailPage } from './pages/RecordDetailPage'
+import { TradesPage } from './pages/TradesPage'
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
           <Route path="/records/:id" element={<RecordDetailPage />} />
           <Route path="/records/:id/edit" element={<EditRecordPage />} />
           <Route path="/users/:id" element={<ProfilePage />} />
+          <Route path="/trades" element={<TradesPage />} />
+          <Route path="/trades/new" element={<ProposeTradePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </HashRouter>

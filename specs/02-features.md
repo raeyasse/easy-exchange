@@ -70,3 +70,4 @@ pending ──accept──▶ accepted   (records swap owners immediately)
 - **AC-4.4** Accepting swaps owners: offered records go to the recipient, requested records go to the proposer. The trade moves to History for both.
 - **AC-4.5** Declining or cancelling moves the trade to History with no ownership change.
 - **AC-4.6** Only the recipient can accept or decline; only the proposer can cancel.
+- **AC-4.7** A record already in a pending trade can't be picked for a new proposal. It shows greyed out with "In a pending trade."

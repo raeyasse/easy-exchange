@@ -1,15 +1,19 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
 import {
+  acceptTrade,
   addRecord,
+  cancelTrade,
+  declineTrade,
   deleteRecord,
   isInPendingTrade,
   lastAddedRecordId,
   loadState,
+  proposeTrade,
   saveState,
   setActiveUser,
   updateRecord,
 } from './data'
-import type { AppState, RecordFields, User } from './data'
+import type { AppState, RecordFields, TradeProposal, User } from './data'
 import type { Record as VinylRecord } from './data/types'
 
 type AppDataValue = {
@@ -20,6 +24,10 @@ type AppDataValue = {
   saveRecord: (recordId: string, fields: RecordFields) => void
   removeRecord: (recordId: string) => void
   recordLocked: (recordId: string) => boolean
+  sendTrade: (proposal: Omit<TradeProposal, 'proposerId'>) => void
+  acceptTrade: (tradeId: string) => void
+  declineTrade: (tradeId: string) => void
+  cancelTrade: (tradeId: string) => void
 }
 
 const AppDataContext = createContext<AppDataValue | null>(null)
@@ -55,6 +63,18 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
       },
       recordLocked(recordId: string) {
         return isInPendingTrade(state, recordId)
+      },
+      sendTrade(proposal) {
+        commit(proposeTrade(state, { ...proposal, proposerId: activeUser.id }))
+      },
+      acceptTrade(tradeId: string) {
+        commit(acceptTrade(state, tradeId, activeUser.id))
+      },
+      declineTrade(tradeId: string) {
+        commit(declineTrade(state, tradeId, activeUser.id))
+      },
+      cancelTrade(tradeId: string) {
+        commit(cancelTrade(state, tradeId, activeUser.id))
       },
     }
   }, [state])
