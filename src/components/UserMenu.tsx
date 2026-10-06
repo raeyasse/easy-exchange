@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useAppData } from '../AppDataProvider'
 
 export function UserMenu() {
@@ -6,7 +5,6 @@ export function UserMenu() {
 
   return (
     <div className="user-menu">
-      <Link to={`/users/${activeUser.id}`}>{activeUser.name}</Link>
       <label className="sr-only" htmlFor="user-switch">
         Switch user
       </label>

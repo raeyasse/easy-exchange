@@ -115,7 +115,7 @@ function RecordPicker({
               disabled={locked}
               onChange={() => toggle(record.id)}
             />
-            <RecordCover artist={record.artist} />
+            <RecordCover artist={record.artist} title={record.title} />
             <span>
               <strong>{record.title}</strong>
               <br />

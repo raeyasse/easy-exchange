@@ -33,4 +33,4 @@ The app has no real sign-in. It ships with four **demo users**, and the visitor 
 
 ## Out of scope
 
-Real accounts, shared data between devices, photos, messaging, ratings, payments, shipping. Do not build these.
+Real accounts, shared data between devices, messaging, ratings, payments, shipping. Do not build these.

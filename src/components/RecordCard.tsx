@@ -11,7 +11,7 @@ export function RecordCard({ record }: { record: VinylRecord }) {
   return (
     <article className="card">
       <Link to={`/records/${record.id}`} className="card-main">
-        <RecordCover artist={record.artist} />
+        <RecordCover artist={record.artist} title={record.title} />
         <div>
           <h2>{record.title}</h2>
           <p>{record.artist}{record.year ? ` · ${record.year}` : ''}</p>

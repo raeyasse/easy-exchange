@@ -18,7 +18,7 @@ export function RecordDetailPage() {
   return (
     <main className="page">
       <div className="detail">
-        <RecordCover artist={record.artist} />
+        <RecordCover artist={record.artist} title={record.title} />
         <div>
           <h1>{record.title}</h1>
           <p className="detail-artist">{record.artist}</p>
